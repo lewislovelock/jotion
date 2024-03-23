@@ -10,6 +10,7 @@ import { Id } from "@/convex/_generated/dataModel";
 import { Title } from "./title";
 import { Banner } from "./banner";
 import { Menu } from "./menu";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface NavbarProps {
   isCollapsed: boolean;
@@ -53,7 +54,10 @@ export const Navbar = ({
         )}
         <div className="flex items-center justify-between w-full">
           <Title initialData={document} />
-          <Menu documentId={document._id} />
+          <div>
+            <ModeToggle />
+            <Menu documentId={document._id} />
+          </div>
         </div>
       </nav>
       {document.isArchived && (
